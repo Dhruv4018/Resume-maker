@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Complete Advanced Resume Builder</title>
+<link rel="stylesheet" href="main.css">
+</head>
+<body>
+<div id="startOverlay">
+    <h1>🚀 Complete Advanced Resume Builder 🚀</h1>
+    <button id="startButton">Start</button>
+    <canvas id="blastCanvas" style="position:absolute;top:0;left:0;z-index:10000;display:none;"></canvas>
+</div>
+<nav style="display:none;">
+    <a href="#" onclick="showSection('home')">Home</a>
+    <a href="#" onclick="showSection('resume')">Resume</a>
+    <a href="#" onclick="showSection('pdfconvert')">PDF Convert</a>
+    <a href="#" onclick="showSection('editpdf')">Edit PDF</a>
+</nav>
+<section id="home" class="active">
+    <h1>✨ Welcome to Complete Advanced Resume Builder ✨</h1>
+    <p>Create, convert, and edit professional resumes with photo uploads, skill edits, and advanced PDF features.</p>
+    <div class="container">
+        <h2>🧩 Play Puzzle Game</h2>
+        <div class="grid" id="puzzleGrid"></div>
+    </div>
+</section>
+<section id="resume">
+    <div class="container">
+        <h2>Advanced Resume Builder</h2>
+        <input type="text" id="name" placeholder="Your Name">
+        <input type="text" id="email" placeholder="Your Email">
+        <input type="text" id="phone" placeholder="Your Phone Number">
+        <input type="text" id="education" placeholder="Your Education">
+        <input type="text" id="experience" placeholder="Your Experience">
+        <textarea id="skills" placeholder="Your Skills (comma separated)"></textarea>
+        <input type="file" id="photoInput" accept="image/*" onchange="previewPhoto(event)">
+        <img id="photoPreview" alt="Photo Preview">
+        <button onclick="generateAdvancedResume()">Download Resume PDF</button>
+    </div>
+</section>
+<section id="pdfconvert">
+    <div class="container">
+        <h2>Photo to PDF Converter</h2>
+        <input type="file" id="photoToPdfInput" accept="image/*">
+        <button onclick="convertPhotoToPDF()">Convert Photo to PDF</button>
+    </div>
+</section>
+<section id="editpdf">
+    <div class="container">
+        <h2>Edit Existing PDF (Add Text)</h2>
+        <input type="file" id="editPdfInput" accept="application/pdf">
+        <input type="text" id="editText" placeholder="Text to Add">
+        <button onclick="editPdfAndDownload()">Edit and Download PDF</button>
+    </div>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
